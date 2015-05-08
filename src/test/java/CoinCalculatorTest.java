@@ -1,36 +1,61 @@
 
-/**
- * Created by Brian on 5/7/2015.
- */
 import org.testng.annotations.Test;
 import static junit.framework.Assert.assertEquals;
 
 public class CoinCalculatorTest {
 
+    String money = "$8.42";
+
     @Test
     public void noChangeMeansNoCoins() {
         CoinCalculator coinCalculator = new CoinCalculator();
 
-        String coinMessage = coinCalculator.changeBack("$8.00");
+        String coinMessage = coinCalculator.changeBack("$8.42");
 
-        assertEquals("you get no coins back", coinMessage);
+        assertEquals("you gave me no money, you get no coins back", coinMessage);
     }
 
     @Test
     public void oneCentMeansOnePenny() {
         CoinCalculator coinCalculator = new CoinCalculator();
 
-        String coinMessage = coinCalculator.changeBack("$8.01");
+        String coinMessage = coinCalculator.changeBack(money);
 
-        assertEquals("you get one penny back", coinMessage);
+        assertEquals("2", coinMessage);
     }
 
     @Test
-    public void fiveCentsMeansOneNickel() {
+    public void fiveCentMeansOneNickel() {
         CoinCalculator coinCalculator = new CoinCalculator();
 
-        String coinMessage = coinCalculator.changeBack("$8.05");
+        String coinMessage = coinCalculator.changeBack(money);
 
-        assertEquals("you get one nickel back", coinMessage);
+        assertEquals("1", coinMessage);
+    }
+    @Test
+    public void tenCentsMeansOneDime() {
+        CoinCalculator coinCalculator = new CoinCalculator();
+
+        String coinMessage = coinCalculator.changeBack(money);
+
+        assertEquals("2", coinMessage);
+    }
+
+    @Test
+    public void twentyfiveCentsMeansOneQuarter() {
+        CoinCalculator coinCalculator = new CoinCalculator();
+
+        String coinMessage = coinCalculator.changeBack(money);
+
+        assertEquals("1", coinMessage);
+    }
+
+    @Test
+    public void oneHundredCentsMeansOneDollar() {
+        CoinCalculator coinCalculator = new CoinCalculator();
+
+        String coinMessage = coinCalculator.changeBack("$8.42");
+
+        assertEquals("8", coinMessage);
     }
 }
