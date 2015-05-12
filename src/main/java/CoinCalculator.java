@@ -1,4 +1,6 @@
 
+
+
 import java.util.ArrayList;
 
 class CoinCalculator {
@@ -59,7 +61,7 @@ class CoinCalculator {
         }
         finalArray.add("\n" + totalCoins + ((totalCoins > 1) ? " coins?" : " coin?") + ", I am allowed to accept tips.");
 
-        return Integer.toString(totalCoins);
+        return toString();
     }
 
     public String euroChangeBack(String moneyAmmountIn) {
@@ -130,7 +132,7 @@ class CoinCalculator {
         }
         finalArray.add("\n" + totalCoins + ((totalCoins > 1) ? " coins?" : " coin?") + ", I am allowed to accept tips.");
 
-        return Integer.toString(totalCoins);
+        return toString();
     }
 
     @Override
