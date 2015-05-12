@@ -14,10 +14,12 @@ class CoinCalculator {
 
         int totalCoins = 0;
 
-        if (change == 0)
-            return "you gave me no money, I'm not a fucking bank!";
+        if (change<= 0) {
+            finalArray.add( "you gave me no money, NO CHANGE FOR YOU!!!");
+            return toString();
+        }
 
-        finalArray.add("Here is your change:\n");
+        finalArray.add("Thank you, here is your change:\n");
 
         int dollars = change / 100;
         totalCoins += dollars;
@@ -61,7 +63,7 @@ class CoinCalculator {
         }
         finalArray.add("\n" + totalCoins + ((totalCoins > 1) ? " coins?" : " coin?") + ", I am allowed to accept tips.");
 
-        return toString();
+        return null;
     }
 
     public String euroChangeBack(String moneyAmmountIn) {
@@ -71,10 +73,12 @@ class CoinCalculator {
 
         int totalCoins = 0;
 
-        if (change == 0)
-            return "you gave me no money, I'm not a fucking bank!";
+        if (change <= 0) {
+            finalArray.add("vous me donniez pas d'argent , pas de changement pour VOUS!!!");
+            return toString();
+        }
 
-        finalArray.add("Here is your change:\n");
+        finalArray.add("Merci, voici votre changement:\n");
 
         int twoEuroCoin = change / 200;
         totalCoins += twoEuroCoin;
@@ -132,7 +136,7 @@ class CoinCalculator {
         }
         finalArray.add("\n" + totalCoins + ((totalCoins > 1) ? " coins?" : " coin?") + ", I am allowed to accept tips.");
 
-        return toString();
+        return null;
     }
 
     @Override
