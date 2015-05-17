@@ -10,18 +10,17 @@ public class ChangeCalculator {
             changeCalculator = new ChangeCalculator();
         }
         return changeCalculator;
-
     }
 
-    public static CoinCalculator usChangeReturned() {
-        return new CoinCalculator();
+    public  UsCoinCalculator usChangeReturned() {
+        return new UsCoinCalculator();
     }
 
-    public static CoinCalculator euroChangeReturned() {
-        return new CoinCalculator();
+    public  EuroCoinCalculator euroChangeReturned() {
+        return new EuroCoinCalculator();
     }
 
-    // Other types of obstacles ie: lakes, walls, trees....shit like that.
+    // Other types of coins can be .
 
 
 }
