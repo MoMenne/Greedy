@@ -2,14 +2,18 @@ import java.util.Arrays;
 
 public class Greedy {
 
-    public final static String EURO = "\u20ac";
+
     public static String coinsGiven;
 
     public static void main(String[] varArgs) {
 
         if (varArgs.length >= 1) {
             coinsGiven = varArgs[0];
-            Greedy greedy1 = new Greedy(ChangeCalculator.getInstance());
+            ApplicationContext context = new ClassPathxmlApplicationContext("ApplicationContext.xml");
+
+            Greedy obj = (Greedy) context.getBean("greedy1");
+            obj.start();
+//            Greedy greedy1 = new Greedy(ChangeCalculator.getInstance());
 
         }else {
             throw new IllegalArgumentException("No value given");
@@ -21,6 +25,8 @@ public class Greedy {
     public Greedy(ChangeCalculator changeCalculator) {
         this.changeCalculator = changeCalculator;
     }
+
+    public final static String EURO = "\u20ac";
 
     public void start() {
         if (coinsGiven.contains("$")) {
