@@ -31,14 +31,14 @@ public class Greedy {
 
     public void start() {
         if (coinsGiven.contains("$")) {
-            UsCoinCalculator usChange = changeCalculator.usChangeReturned();
+            UsCoinCalculator usChange = changeCalculator.usChangeReturned(coinsGiven);
             usChange.changeBack(coinsGiven);
             System.out.println(usChange);
         }
 
         if (coinsGiven.contains(EURO)) {
-            EuroCoinCalculator euroChange = ChangeCalculator.getInstance().euroChangeReturned();
-            euroChange.changeBack(EURO);
+            EuroCoinCalculator euroChange = ChangeCalculator.getInstance().euroChangeReturned(coinsGiven);
+            euroChange.changeBack(coinsGiven);
             System.out.println(euroChange);
         }
     }
